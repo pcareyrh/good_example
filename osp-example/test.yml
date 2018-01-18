@@ -1,8 +1,8 @@
-- hosts: jumpbox
+- hosts: all
   roles:
     - osp-facts
 
-- hosts: dev
+- hosts: all
   gather_facts: false
   become: yes
   tasks:
