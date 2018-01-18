@@ -1,0 +1,16 @@
+- hosts: all
+#  become: yes
+  tasks:
+## Alternate Method to create dynmaic inventory
+  - name: Gather facts
+    include_role: 
+       name: osp-facts
+    tags:
+     - test_inventory
+
+  - name: clean servers
+    os_server:
+      cloud: ospcloud
+      state: absent
+      name: "{{ item.name }}"
+    with_items: "{{result.ansible_facts.openstack_servers}}" 
