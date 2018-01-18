@@ -1,0 +1,21 @@
+- name: ensure latest apache is present
+  package:
+    name: httpd
+    state: latest
+  
+- name: enable httpd and start service
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+
+- name: ensute latest tomcat is present
+  package:
+    name: tomcat
+    state: latest
+
+- name: start tomcat and enable service.
+  service:
+    name: tomcat
+    state: started
+    enabled: yes

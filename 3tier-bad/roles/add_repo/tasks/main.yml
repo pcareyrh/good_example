@@ -1,0 +1,6 @@
+---
+- name: enable three tier repo.
+  template:
+    src: three_tier_app.repo.j2
+    dest: /etc/yum.repos.d/open-three-tier-app.repo
+    mode: 0644

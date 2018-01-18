@@ -1,0 +1,15 @@
+--- 
+- 
+  handlers: 
+    - 
+      name: "restart HAProxy"
+      service: 
+        name: haproxy
+        state: restarted
+  name: "configure HAProxy"
+  notify: 
+    - "restart HAProxy"
+  template: 
+    dest: /etc/haproxy/haproxy.cfg
+    src: haproxy.cfg.j2
+

@@ -1,0 +1,32 @@
+---
+- hosts: all
+  remote_user: ec2_user
+  gather_facts: false
+  become: true
+  roles:
+    - { role: add_repo, tags: ['add_repo']}
+
+- hosts: frontends
+  remote_user: ec2_user
+  gather_facts: false
+  become: true
+  roles:
+    - { role: prepare_haproxy_server, tags: ['prepare_haproxy_server']}
+    - { role: configure_haproxy_server, tags: 'configure_haproxy_server'}
+
+- hosts: apps
+  remote_user: ec2_user
+  gather_facts: false
+  become: true
+  roles:
+    - { role: prepare_app_server, tags: ['prepare_app_server']}
+    - { role: configure_app_server, tags: ['configure_app_server']}
+
+- hosts: dbs
+  remote_user: ec2_user
+  gather_facts: false
+  become: true
+  roles:
+    - { role: openmicroscopy.postgresql }
+#    - { role: prepare_dbs_server, tags: ['prepare_dbs_server']}
+#    - { role: configure_dbs_server, tags: ['configure_dbs_server']}
