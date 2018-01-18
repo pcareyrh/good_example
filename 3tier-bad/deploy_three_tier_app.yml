@@ -22,11 +22,11 @@
     - { role: prepare_app_server, tags: ['prepare_app_server']}
     - { role: configure_app_server, tags: ['configure_app_server']}
 
-- hosts: dbs
-  remote_user: ec2_user
-  gather_facts: false
-  become: true
-  roles:
-    - { role: openmicroscopy.postgresql }
+#- hosts: dbs
+#  remote_user: ec2_user
+#  gather_facts: false
+#  become: true
+#  roles:
+#    - { role: openmicroscopy.postgresql }
 #    - { role: prepare_dbs_server, tags: ['prepare_dbs_server']}
 #    - { role: configure_dbs_server, tags: ['configure_dbs_server']}
