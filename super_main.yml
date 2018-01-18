@@ -1,9 +1,9 @@
 ---
-hosts: localhost
-gather_facts: false
-tasks:
-  - name: dummy task
-    setup:
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: dummy task
+      setup:
 
-include_playbook: osp-example/site.yaml
-include_playbook: 3tier-bad/deploy_three_tier_app.yml
+- include_playbook: osp-example/site.yaml
+- include_playbook: 3tier-bad/deploy_three_tier_app.yml
