@@ -1,4 +1,4 @@
-- hosts: jumpbox
+- hosts: all
 #  become: yes
   roles:
      - osp-network
