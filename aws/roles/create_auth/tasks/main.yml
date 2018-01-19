@@ -31,6 +31,6 @@
 
   - name: provision aws
     shell: >
-      cd ~/bin ; source ./credential.rc ; ./order_svc.sh -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
+      cd ~/bin ; source ./credential.rc ; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
 
 
