@@ -1,13 +1,13 @@
 ---
 - hosts: dev
-  remote_user: ec2_user
+  remote_user: cloud-user
   gather_facts: false
   become: true
   roles:
     - { role: add_repo, tags: ['add_repo']}
 
 - hosts: frontends
-  remote_user: ec2_user
+  remote_user: cloud-user
   gather_facts: false
   become: true
   roles:
@@ -15,7 +15,7 @@
     - { role: configure_haproxy_server, tags: 'configure_haproxy_server'}
 
 - hosts: apps
-  remote_user: ec2_user
+  remote_user: cloud-user
   gather_facts: false
   become: true
   roles:
@@ -23,7 +23,7 @@
     - { role: configure_app_server, tags: ['configure_app_server']}
 
 #- hosts: dbs
-#  remote_user: ec2_user
+#  remote_user: cloud-user
 #  gather_facts: false
 #  become: true
 #  roles:
