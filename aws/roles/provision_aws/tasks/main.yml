@@ -1,0 +1,38 @@
+---
+  - name: create bin
+    file:
+      path: ~/bin
+      state: directory
+      mode: 0755
+
+  - name: copy files
+    template:
+      src: credential.j2
+      dest: ~/bin/credential.rc
+
+  - name: download common.sh
+    get_url:
+      url: http://www.opentlc.com/download/ansible_bootcamp/scripts/common.sh
+      dest: ~/bin/common.sh
+      mode: 0755
+
+  - name: download order_svc
+    get_url: 
+      url: http://www.opentlc.com/download/ansible_bootcamp/scripts/order_svc.sh 
+      dest: ~/bin/order_svc.sh
+      mode: 0755
+
+  - name: download jq
+    become: True
+    shell: >
+      wget http://www.opentlc.com/download/ansible_bootcamp/scripts/jq-linux64 -O /bin/jq
+
+  - name: chmod jq
+    become: True
+    shell: chmod 0755 /bin/jq
+
+  - name: provision aws
+    shell: >
+      cd ~/bin ; source ./credential.rc ; ./order_svc.sh -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
+
+

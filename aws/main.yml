@@ -6,7 +6,9 @@
       setup:
 
   roles:
-    - { role: create_auth }
+    - { role: provision_aws }
+      #    - { role: create_auth }
+
               #- import_playbook: aws/main.yml
               #
               #
