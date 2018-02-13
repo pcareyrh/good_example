@@ -7,7 +7,7 @@
 
   - name: copy files
     template:
-      src: credential.j2
+      src: credential.yml
       dest: ~/bin/credential.rc
 
   - name: download common.sh
