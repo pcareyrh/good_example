@@ -1,8 +1,7 @@
 --- 
 - 
   handlers: 
-    - 
-      name: "restart HAProxy"
+    - name: "restart HAProxy"
       service: 
         name: haproxy
         state: restarted
