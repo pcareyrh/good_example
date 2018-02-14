@@ -6,5 +6,5 @@
       setup:
 
 #- import_playbook: osp-example/site.yaml
-#- import_playbook: osp-example/add_hosts.yml
+- import_playbook: osp-example/add_hosts.yml
 - import_playbook: 3tier-bad/deploy_three_tier_app.yml
