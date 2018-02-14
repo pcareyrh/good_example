@@ -1,19 +1,8 @@
 # Simple example relying on the default Postgres PUBLIC privileges
 # which allow access to all users
 #- hosts: localhost
-- roles:
-  - role: postgresql
-    postgresql_server_listen: "'*'"
-    postgresql_server_auth:
-    - database: publicdb
-      user: alice
-      address: 192.168.1.0/24
-    postgresql_databases:
-    - name: publicdb
-    postgresql_users:
-    - user: alice
-      password: alice123
-      databases: []
+- role: geerlingguy.postgresql
+          become: yes
 
 
 #- name: ensure latest postgres is present.
