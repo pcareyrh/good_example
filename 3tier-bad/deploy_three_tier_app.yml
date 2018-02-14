@@ -22,12 +22,12 @@
     - { role: prepare_app_server, tags: ['prepare_app_server']}
     - { role: configure_app_server, tags: ['configure_app_server']}
 
-- hosts: dbs
+- hosts: appdbs
   remote_user: cloud-user
   gather_facts: false
   become: true
   roles:
     - { role: geerlingguy.postgresql }
-    
+
 #    - { role: prepare_dbs_server, tags: ['prepare_dbs_server']}
 #    - { role: configure_dbs_server, tags: ['configure_dbs_server']}
