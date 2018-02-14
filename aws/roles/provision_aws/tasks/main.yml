@@ -26,12 +26,10 @@
 
   - name: download jq
     become: True
-    shell: >
-      wget http://www.opentlc.com/download/ansible_bootcamp/scripts/jq-linux64 -O /bin/jq
-
-  - name: chmod jq
-    become: True
-    shell: chmod 0755 /bin/jq
+    get_url:
+      url: http://www.opentlc.com/download/ansible_bootcamp/scripts/jq-linux64
+      dest: /bin/jq
+      mode: 0755
 
   - name: provision aws
     shell: >
