@@ -1,4 +1,6 @@
 ---
+  - include_vars: opentlc.yml
+
   - name: create bin
     file:
       path: ~/bin
