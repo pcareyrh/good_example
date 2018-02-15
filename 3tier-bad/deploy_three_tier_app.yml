@@ -24,7 +24,7 @@
 
 - hosts: appdbs
   remote_user: cloud-user
-  gather_facts: false
+  gather_facts: true
   become: true
   roles:
     - { role: geerlingguy.postgresql }
