@@ -1,13 +1,13 @@
 ---
 - hosts: dev
-  remote_user: {{ remote-user }}
+  remote_user: "{{ remote-user }}"
   gather_facts: false
   become: true
   roles:
     - { role: add_repo, tags: ['add_repo']}
 
 - hosts: frontends
-  remote_user: {{ remote-user }}
+  remote_user: "{{ remote-user }}"
   gather_facts: false
   become: true
   roles:
@@ -15,7 +15,7 @@
     - { role: configure_haproxy_server, tags: 'configure_haproxy_server'}
 
 - hosts: apps
-  remote_user: {{ remote-user }}
+  remote_user: "{{ remote-user }}"
   gather_facts: false
   become: true
   roles:
@@ -23,7 +23,7 @@
     - { role: configure_app_server, tags: ['configure_app_server']}
 
 - hosts: appdbs
-  remote_user: {{ remote-user }}
+  remote_user: "{{ remote-user }}"
   gather_facts: true
   become: true
   roles:
