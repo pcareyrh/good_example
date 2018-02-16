@@ -1,3 +1,10 @@
+- name: enable sudo without tty for some ansible commands
+  replace:
+    path: /etc/sudoers
+    regexp: '^Defaults\s*requiretty'
+    replace: 'Defaults  !requiretty'
+    backup: yes
+
 - name: initilize postgres
   command: postgresql-setup initdb
   run_once: true
