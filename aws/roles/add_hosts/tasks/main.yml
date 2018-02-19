@@ -2,6 +2,7 @@
 # tasks file for aws facts
    - name: Fetch Instance Info
      ec2_instance_facts:
+       region: us-east-1
        filters: tag:owner=pcarey*
      register: result
    - name: Add host
