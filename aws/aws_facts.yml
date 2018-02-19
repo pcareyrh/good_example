@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: dummy task
+      setup:
+
+  roles:
+    - { role: add_hosts }
