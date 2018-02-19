@@ -7,9 +7,5 @@
 
   roles:
     - { role: provision_aws }
+    - { role: copy_ssh_id }
       #    - { role: create_auth }
-
-              #- import_playbook: aws/main.yml
-              #
-              #
-
