@@ -1,9 +1,4 @@
 ---
-- hosts: bastion
-  gather_facts: false
-  roles:
-    - { role: copy_ssh_id }
-
 - hosts: all
   gather_facts: false
   tasks:
