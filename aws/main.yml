@@ -1,4 +1,9 @@
 ---
+- hosts: bastion
+  gather_facts: false
+  roles:
+    - { role: copy_ssh_id }
+
 - hosts: all
   gather_facts: false
   tasks:
@@ -7,5 +12,4 @@
 
   roles:
     - { role: provision_aws }
-    - { role: copy_ssh_id }
       #    - { role: create_auth }
