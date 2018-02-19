@@ -1,0 +1,6 @@
+---
+# use key for IP addresses also
+- lineinfile:
+    path: /etc/selinux/config
+    regexp: '^Host *.internal'
+    line: '^Host *'
