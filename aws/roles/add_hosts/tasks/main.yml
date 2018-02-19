@@ -2,7 +2,7 @@
 # tasks file for aws facts
    - name: Fetch Instance Info
      ec2_instance_facts:
-       filters: tag:instance_filter=three-tier-app*|tag:owner=pcarey*
+       filters: tag:owner=pcarey*
      register: result
    - name: Add host
      add_host:
