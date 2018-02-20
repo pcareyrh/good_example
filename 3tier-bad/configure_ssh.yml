@@ -5,4 +5,4 @@
   roles:
     - { role: copy_ssh_id }
 
-- import_playbook: 3tier-bad/deploy_three_tier_app.yml
+- import_playbook: deploy_three_tier_app.yml
