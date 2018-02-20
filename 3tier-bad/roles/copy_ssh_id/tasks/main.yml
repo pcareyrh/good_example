@@ -1,6 +1,6 @@
 ---
 # use key for IP addresses also
-- replate:
+- replace:
     path: /root/.ssh/config
     regexp: 'Host *.internal'
     replace: 'Host *'
