@@ -1,11 +1,4 @@
 ---
-- hosts: bastion
-  remote_user: pcarey-redhat.com
-  gather_facts: false
-  become: true
-  roles:
-    - { role: copy_ssh_id }
-
 - hosts: dev
   remote_user: "{{ remote_user }}"
   gather_facts: false

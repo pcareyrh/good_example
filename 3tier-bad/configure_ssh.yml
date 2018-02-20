@@ -1,0 +1,6 @@
+- hosts: bastion
+  remote_user: pcarey-redhat.com
+  gather_facts: false
+  become: true
+  roles:
+    - { role: copy_ssh_id }
