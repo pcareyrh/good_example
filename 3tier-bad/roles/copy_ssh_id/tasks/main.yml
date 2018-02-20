@@ -2,5 +2,5 @@
 # use key for IP addresses also
 - lineinfile:
     path: /root/.ssh/config
-    regexp: '^Host *.internal'
-    line: '^Host *'
+    regexp: 'Host *.internal'
+    line: 'Host *'
