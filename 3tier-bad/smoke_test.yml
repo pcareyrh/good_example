@@ -1,0 +1,10 @@
+- hosts: frontends
+  gather_facts: false
+
+#- import_playbook: deploy_three_tier_app.yml
+  tasks:
+  - name: test app is up
+    uri:
+      url: "{{ ansible_eth0["ipv4"]["address"] }}"
+      status_code: 200
+  
