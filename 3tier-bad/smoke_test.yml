@@ -1,10 +1,10 @@
-- hosts: frontends
+- hosts: bastion
   gather_facts: true
 
 #- import_playbook: deploy_three_tier_app.yml
   tasks:
   - name: test app is up
     uri:
-      url: http://{{ ansible_eth0["ipv4"]["address"] }}
+      url: http://{{ host['frontends']['ansible_eth0']['ipv4']['address'] }}
       status_code: 200
   
