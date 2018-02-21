@@ -5,6 +5,6 @@
   tasks:
   - name: test app is up
     uri:
-      url: "{{ ansible_eth0["ipv4"]["address"] }}"
+      url: {{ ansible_eth0.ipv4.address }}
       status_code: 200
   
