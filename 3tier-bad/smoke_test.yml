@@ -6,6 +6,6 @@
   tasks:
   - name: test app is up
     uri:
-      url: http://"{% for host in groups['frontends'] %}{{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}{% endfor %}"
+      url: http://'{{ ansible_eth0["ipv4"]["address"] }}'
       status_code: 200
   
