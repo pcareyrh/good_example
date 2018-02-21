@@ -1,5 +1,5 @@
 - hosts: frontends
-  gather_facts: false
+  gather_facts: true
 
 #- import_playbook: deploy_three_tier_app.yml
   tasks:
