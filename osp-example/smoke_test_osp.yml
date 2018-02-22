@@ -5,5 +5,5 @@
     - name: dummy task
       setup:
 
-- import_playbook: osp-example/add_hosts.yml
-- import_playbook: osp-example/smoke_test.yml
+- import_playbook: add_hosts.yml
+- import_playbook: smoke_test.yml
