@@ -26,7 +26,7 @@ backend app-servers
     balance roundrobin
     option forwardfor
     {% for host in groups['apps'] %}
-      server {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}:8080 cookie check
+      server {{ hostvars[host]['ansible_facts']['openstack_servers']['public_v4'] }}:8080 cookie check
     {% endfor %}
 #    server app1 app1.{{GUID}}.internal:8080 cookie app1 check
 #    server app2 app2.{{GUID}}.internal:8080 cookie app2 check

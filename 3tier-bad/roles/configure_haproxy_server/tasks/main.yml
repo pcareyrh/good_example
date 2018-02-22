@@ -1,8 +1,13 @@
 --- 
+- name: Fetch Instance Info
+  os_server_facts:
+    cloud: ospcloud
+    region_name: RegionOne
+  register: result
+
 - name: "configure HAProxy"
   notify: 
     - "restart HAProxy"
   template: 
     dest: /etc/haproxy/haproxy.cfg
     src: haproxy.cfg.j2
-
