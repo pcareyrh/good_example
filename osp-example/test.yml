@@ -2,12 +2,12 @@
   roles:
     - osp-facts
 
-- hosts: all
-  gather_facts: false
-  become: yes
-  tasks:
-  - name: Ping
-    ping:
-    tags:
-     - test_inventory
+#- hosts: all
+ # gather_facts: false
+  #become: yes
+#  tasks:
+ # - name: Ping
+  #  ping:
+   # tags:
+    # - test_inventory
  
