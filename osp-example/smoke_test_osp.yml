@@ -1,12 +1,10 @@
-- hosts: frontends
-  gather_facts: true
-
-#- import_playbook: deploy_three_tier_app.yml
-#- hosts: bastion
+  ---
+- hosts: localhost
+  gather_facts: false
   tasks:
-  - name: test app is up
-    uri:
-      url: http://{{ ansible_eth0["ipv4"]["address"] }}
-      status_code: 200
-      return_content: yes
-  
+    - name: dummy task
+      setup:
+
+- hosts: all
+  - import_playbook: osp-example/add_hosts.yml
+  - import_playbook: osp-example/smoke_test.yml
