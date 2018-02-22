@@ -1,9 +1,6 @@
 ---
-- hosts: frontends
-  gather_facts: true
+- hosts: all
 
-#- import_playbook: deploy_three_tier_app.yml
-#- hosts: bastion
   tasks:
   - name: test app is up
     uri:
