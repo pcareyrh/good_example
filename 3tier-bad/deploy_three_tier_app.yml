@@ -1,14 +1,14 @@
 ---
 - hosts: dev
   remote_user: "{{ remote_user }}"
-  gather_facts: false
+  gather_facts: true
   become: true
   roles:
     - { role: add_repo, tags: ['add_repo']}
 
 - hosts: frontends
   remote_user: "{{ remote_user }}"
-  gather_facts: false
+  gather_facts: true
   become: true
   roles:
     - { role: prepare_haproxy_server, tags: ['prepare_haproxy_server']}
