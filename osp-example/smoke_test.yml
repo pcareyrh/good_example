@@ -4,7 +4,8 @@
   tasks:
   - name: test app is up
     uri:
-      url: http://{{ ansible_eth0["ipv4"]["address"] }}
+      url: {% for host in groups['frontends'] %}
+        http://{{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}:8080 cookie check
+      {% endfor %}
       status_code: 200
       return_content: yes
-  
