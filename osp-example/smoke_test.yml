@@ -5,7 +5,7 @@
   - name: test app is up
     uri:
       url: "{% for host in groups['frontends'] %}
-        {{ hostvars[host]['hostname'] }}
+        {{ hostvars[host]['host_name'] }}
         {% endfor %}"
       status_code: 200
       return_content: yes
