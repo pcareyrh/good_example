@@ -2,6 +2,9 @@
 - hosts: jumpbox
 
   tasks:
+  - degug:
+    msg: "{% for host in groups['frontends'] %} {{ hostvars[host] }} {% endfor %}"
+
   - name: test app is up
     uri:
       url: "{% for host in groups['frontends'] %}
