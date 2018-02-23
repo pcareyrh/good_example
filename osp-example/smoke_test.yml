@@ -1,16 +1,5 @@
 ---
-- name: dump all
-  hosts: frontends
-  remote_user: "{{ remote_user }}"
-  gather_facts: true
-  become: true
-  tasks:
-  - name: get variables
-    debug:
-      var: hostvars[inventory_hostname]
-
 - hosts: jumpbox
-
   tasks:
   - debug:
     msg: "{% for host in groups['frontends'] %} {{ hostvars[host]['item'] }} {% endfor %}"
@@ -22,3 +11,4 @@
         {% endfor %}"
       status_code: 200
       return_content: yes
+      ignore_errors: yes
