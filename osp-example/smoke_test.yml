@@ -1,7 +1,9 @@
 ---
 - name: dump all
-  hosts: all
- 
+  hosts: frontends
+  remote_user: "{{ remote_user }}"
+  gather_facts: true
+  become: true
   tasks:
   - name: get variables
     debug:
