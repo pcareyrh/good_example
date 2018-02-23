@@ -4,6 +4,6 @@
   tasks:
   - name: test app is up
     uri:
-      url: "{{ host }}"
+      url: "{{ hostvars[inventory_hostname] }}"
       status_code: 200
       return_content: yes
