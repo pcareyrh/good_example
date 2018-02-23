@@ -4,6 +4,8 @@
   tasks:
   - name: test app is up
     uri:
-      url: "{{ hostvars[inventory_hostname] }}"
+      url: "{% for host in groups['frontends'] %}
+        {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
+        {% endfor %}"
       status_code: 200
       return_content: yes
