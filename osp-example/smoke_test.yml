@@ -2,7 +2,7 @@
 - hosts: frontends
   tasks:
   - debug:
-    msg: "{% for host in groups['frontends'] %} {{ hostvars[host]['item']['vm_state'] }} {% endfor %}"
+    msg: "{% for host in groups['frontends'] %} {{ hostvars[host]['inventory_hostname'] }} {% endfor %}"
 
   - name: test app is up
     uri:
