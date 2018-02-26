@@ -1,5 +1,5 @@
 ---
-- hosts: jumpbox
+- hosts: frontends
   tasks:
   - debug:
     msg: "{% for host in groups['frontends'] %} {{ hostvars[host]['item'] }} {% endfor %}"
