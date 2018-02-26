@@ -6,7 +6,7 @@
 
   - name: test app is up
     uri:
-      url: "{% for host in groups['frontends'] %}
+      url: http://"{% for host in groups['frontends'] %}
         {{ [host] }}
         {% endfor %}"
       status_code: 200
