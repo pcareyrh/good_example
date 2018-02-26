@@ -6,7 +6,7 @@
 
   - name: test app is up
     uri:
-      url: http://{{ [host] }}
+      url: http://{{ hostname }}
       status_code: 200
       return_content: yes
     ignore_errors: yes
