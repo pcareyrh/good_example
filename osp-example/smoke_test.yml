@@ -2,12 +2,12 @@
 - hosts: frontends
   tasks:
   - debug:
-    var: "{% for host in groups['frontends'] %} {{ hostvars[hostname] }} {% endfor %}"
+    var: hostvars[inventory_hostname]
 
   - name: test app is up
     uri:
       url: http://"{% for host in groups['frontends'] %}
-        {{ [hostname] }}
+        {{ [host] }}
         {% endfor %}"
       status_code: 200
       return_content: yes
