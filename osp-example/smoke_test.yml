@@ -3,6 +3,7 @@
   tasks:
   - debug:
     var: hostvars[inventory_hostname]
+    verbosity: 4
 
   - name: test app is up
     uri:
